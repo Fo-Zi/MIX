@@ -1,0 +1,49 @@
+set nocompatible
+filetype off
+			
+"-----------------------Vundle installed plugins-----------------------"
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin("$HOME/.vim/bundle")
+	Plugin 'VundleVim/Vundle.vim'
+
+	Plugin 'ycm-core/YouCompleteMe'
+	Plugin 'jiangmiao/auto-pairs'
+	Plugin 'tpope/vim-surround'
+	Plugin 'preservim/nerdcommenter'
+	Plugin 'preservim/NERDTree'
+	Plugin 'joshdick/onedark.vim',{'as':'onedark'}
+
+call vundle#end()            
+
+"-----------------------Color setup-----------------------"
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+"-----------------------Config-----------------------"
+"Visual
+syntax on
+colorscheme onedark
+set number
+
+"Cursor related
+filetype plugin indent on
+set autoindent
+set ruler
+set showmatch
+set scrolloff=5
+set cursorline
+
+"Searching related
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase 
+
+"Shortcuts
+xnoremap p pgvy
