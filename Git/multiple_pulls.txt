@@ -1,0 +1,6 @@
+When you're working with multiple repos inside some workspace folder, you usually will want to update all of them, and doing it would imply getting inside each one of them and executing a pull command. In order to automate this repetitive task you could:
+- Add an alias to your terminal config file:
+   alias multipull="find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;"
+   By doing this you only need to run "cd /Workspace | multipull"
+
+- Create a script that runs the same command in your workspace folder.
