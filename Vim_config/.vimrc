@@ -10,10 +10,15 @@ call vundle#begin("$HOME/.vim/bundle")
 	Plugin 'jiangmiao/auto-pairs'
 	Plugin 'tpope/vim-surround'
 	Plugin 'preservim/nerdcommenter'
-	Plugin 'preservim/NERDTree'
-	Plugin 'joshdick/onedark.vim',{'as':'onedark'}
-
+	Plugin 'dense-analysis/ale'
 call vundle#end()            
+filetype plugin indent on
+
+"-----------------------Vim-plug installed plugins-----------------------"
+call plug#begin('~/.vim/plugged')
+	Plug 'preservim/NERDTree'
+	Plug 'joshdick/onedark.vim',{'as':'onedark'}
+call plug#end()
 
 "-----------------------Color setup-----------------------"
 if (empty($TMUX))
@@ -32,7 +37,6 @@ colorscheme onedark
 set number
 
 "Cursor related
-filetype plugin indent on
 set autoindent
 set ruler
 set showmatch
