@@ -11,7 +11,10 @@ call vundle#begin("$HOME/.vim/bundle")
 	Plugin 'tpope/vim-surround'
 	Plugin 'preservim/nerdcommenter'
 	Plugin 'dense-analysis/ale'
+	Plugin 'airblade/vim-gitgutter'
+
 call vundle#end()            
+
 filetype plugin indent on
 
 "-----------------------Vim-plug installed plugins-----------------------"
@@ -19,6 +22,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/NERDTree'
 	Plug 'joshdick/onedark.vim',{'as':'onedark'}
 call plug#end()
+
+"-----------------------NERDTree & terminal Init-----------------------"
+autocmd vimenter * below terminal
+autocmd vimenter * resize 10
+
+autocmd vimenter * NERDTree
 
 "-----------------------Color setup-----------------------"
 if (empty($TMUX))
